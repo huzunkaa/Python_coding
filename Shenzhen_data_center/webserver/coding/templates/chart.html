@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>折线图</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.1.2/echarts.min.js"></script>
+</head>
+<body>
+    <div id="chart" style="width: 800px; height: 600px;"></div>
+    <script>
+        var myChart = echarts.init(document.getElementById('chart'));
+        myChart.setOption({{ chart_data|safe }});
+    </script>
+</body>
+</html>

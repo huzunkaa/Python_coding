@@ -1,2 +1,6 @@
 2023.05.16
-新增echarts模块作图网页反馈功能
+新增echarts模块作图网页反馈功能(在主页上传文件后，点击提交，网页上会出现一个折线图)
+简单来说，就是views.py中使用“request.method == 'POST' and request.FILES['file']”函数处理上传的文件
+upload.html文件接收上传的文件
+之后使用echarts模块读取上传的文件，构建图片后，渲染到模板上，传输到chart.html文件中
+最后通过render函数反馈到网页上

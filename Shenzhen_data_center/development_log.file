@@ -1,3 +1,5 @@
+##git config http.postBuffer 524288000
+##git config --global http.sslVerify "false"
 2023.05.16
 新增echarts模块作图网页反馈功能(在主页上传文件后，点击提交，网页上会出现一个折线图)
 简单来说，就是views.py中使用“request.method == 'POST' and request.FILES['file']”函数处理上传的文件

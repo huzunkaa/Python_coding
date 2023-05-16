@@ -6,6 +6,8 @@ from django.conf import settings
 from django.views import static
 
 urlpatterns = [
-    # path('', views.homepage),
-    path('', views.upload_file, name='upload_file'),
+    path('', views.homepage),
+    path('upload/', views.upload_file, name='upload_file'),
+    path('document/', views.upload_file, name='upload_file'),
+    path('contact/', views.upload_file, name='upload_file'),
 ]

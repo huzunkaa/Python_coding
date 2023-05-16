@@ -2,7 +2,7 @@ import os
 from django.shortcuts import render,HttpResponse,redirect,reverse
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
-from echarts import Echart, Legend, Line, Tooltip
+from echarts import Echart, Legend, Line, Tooltip ,Bar
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse,HttpResponseRedirect
 
@@ -27,11 +27,17 @@ def upload_file(request):
         y_data = [d[1] for d in data]
 
         # 构建折线图并渲染到模板上
-        chart = Echart('折线图', '示例')
+        chart = Echart('折线图1', '示例')
         chart.use(Tooltip())
         chart.use(Legend(['示例']))
-        chart.use(Line('示例', y_data, x_axis=x_data))
+        chart.use(Bar('示例', y_data, x_axis=x_data))#这个相当于规定了是line型号的图
         chart_data = chart.json
         return render(request, 'chart.html', {'file_url': file_url, 'chart_data': chart_data})
     else:
         return render(request, 'upload.html')
+
+def document(response):
+    return render(response,'document.html')
+
+def contect(response):
+    return render(response,'contect.html')

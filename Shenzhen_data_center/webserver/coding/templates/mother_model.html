@@ -12,42 +12,17 @@
 
     </head>
     <body>
-        <!-- Navigation导航栏-->
-<!--        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">-->
-<!--            <div class="container px-4 px-lg-5">-->
-<!--                <a class="navbar-brand" href="/"><font size="5"><b>IPAGE Data Analysis Cloud platform</b></font></a>-->
-<!--                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--                    Menu-->
-<!--                    <i class="fas fa-bars"></i>-->
-<!--                </button>-->
-<!--                <div class="collapse navbar-collapse" id="navbarResponsive">-->
-<!--                    <ul class="navbar-nav ms-auto py-4 py-lg-0">-->
-<!--                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/"><font size="3">Homepage</font></a></li>-->
-<!--                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/introduce"><font size="3">Introduction</font></a></li>-->
-<!--                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/analysis"><font size="3">Analysis</font></a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </nav>-->
       <!-- 导航栏 -->
   <nav class="navbar">
       <a href="/"><font size="5"><b>IPAGE Data Analysis Cloud platform</b></font></a>
       <div class="navbar-right">
       <a href="/">Introduce</a>
-      <a href="#">Documention</a>
-      <a href="#">Analysis</a>
-      <a href="#">Contact</a>
+      <a href="/document">Documention</a>
+      <a href="/upload">Analysis</a>
+      <a href="/contact">Contact</a>
       </div>
   </nav>
-
-
-
-        <!-- Page Header-->
-<!--        <header class="masthead" style="background-image: url('/static/img/back_pic.png')"></header>-->
-<!--        <header class="masthead"></header>-->
         {% block bg_pic %}{% endblock %}
-
-        <!-- Main Content-->
         {% block main %}{% endblock %}
     </body>
 </html>

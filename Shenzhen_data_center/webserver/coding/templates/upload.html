@@ -1,12 +1,9 @@
 {% extends 'mother_model.html' %}
+
 {% block main %}
-
-
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="file" name="file">
     <button type="submit">上传</button>
 </form>
-
-
 {% endblock %}

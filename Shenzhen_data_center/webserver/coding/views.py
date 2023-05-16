@@ -1,25 +1,19 @@
+import os
 from django.shortcuts import render,HttpResponse,redirect,reverse
-import os
-from django.http import JsonResponse,HttpResponseRedirect
-from datetime import datetime
-from django.views.decorators.csrf import csrf_exempt
-
-def homepage(response):
-    return render(response,'homepages.html')
-
-
-import os
-from django.shortcuts import render
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from echarts import Echart, Legend, Line, Tooltip
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse,HttpResponseRedirect
 
+def homepage(response):
+    return render(response,'homepages.html')
 
 def upload_file(request):
     if request.method == 'POST' and request.FILES['file']:
         # 处理上传文件
         file = request.FILES['file']
-        fs = FileSystemStorage()
+        fs = FileSystemStorage('/static/user_file/file_storage/')
         filename = fs.save(file.name, file)
         file_url = fs.url(filename)
 

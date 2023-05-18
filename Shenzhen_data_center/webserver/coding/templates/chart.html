@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html>
+{% extends 'mother_model.html' %}
 <head>
     <meta charset="UTF-8">
     <title>折线图</title>
-    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.1.2/echarts.min.js"></script>
 </head>
+{% block main %}
 <body>
     <div id="chart" style="width: 800px; height: 600px;"></div><!--    这是一个容器，用来存放接下来要做的图-->
     <script>
@@ -12,4 +11,5 @@
         myChart.setOption({{ chart_data|safe }});
     </script><!--    上面第一行代码相当于初始化，第二行应该是myChart.setOption(option);这个options在views.py中传入进来-->
 </body>
-</html>
+
+{% endblock %}

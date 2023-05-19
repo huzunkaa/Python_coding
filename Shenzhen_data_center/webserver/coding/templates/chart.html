@@ -1,15 +1,113 @@
-{% extends 'mother_model.html' %}
-<head>
-    <meta charset="UTF-8">
-    <title>折线图</title>
-</head>
-{% block main %}
-<body>
-    <div id="chart" style="width: 800px; height: 600px;"></div><!--    这是一个容器，用来存放接下来要做的图-->
-    <script>
-        var myChart = echarts.init(document.getElementById('chart'));
-        myChart.setOption({{ chart_data|safe }});
-    </script><!--    上面第一行代码相当于初始化，第二行应该是myChart.setOption(option);这个options在views.py中传入进来-->
-</body>
+<!--{% extends 'mother_model.html' %}-->
+<!--{% block main %}-->
+<!--<style>-->
+<!--p.serif{font-family:"Times New Roman",Times,serif;}-->
+<!--p.sansserif{font-family:Arial,Helvetica,sans-serif;}-->
+<!--</style>-->
+<!--<body>-->
+<!--    <p class="sansserif"><b>feature selection</b></p>-->
+<!--    <form method="post" enctype="multipart/form-data">-->
+<!--        {% csrf_token %}-->
+<!--        <input type="file" name="txt_file">-->
+<!--        <button type="submit">上传文件</button>-->
+<!--    </form>-->
+<!--    {% if line %}-->
+<!--        {{ line|safe }}-->
+<!--    {% endif %}-->
+<!--</body>-->
+<!--{% endblock %}-->
 
-{% endblock %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>展示三个不同的图像</title>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<style>
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			align-items: center;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		canvas {
+			width: 400px;
+			height: 400px;
+			margin-bottom: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<canvas id="scatterChart" width="400" height="400"></canvas>
+		<canvas id="lineChart" width="400" height="400"></canvas>
+		<canvas id="boxChart" width="400" height="400"></canvas>
+	</div>
+
+	<script>
+		// 散点图数据
+		var scatterData = {
+			datasets: [{
+				label: 'sandian',
+				data: [
+					{x: 10, y: 30},
+					{x: 30, y: 40},
+					{x: 50, y: 50},
+					{x: 70, y: 80},
+					{x: 90, y: 110}
+				]
+			}]
+		};
+
+		// 折线图数据
+		var lineData = {
+			labels: ['一月', '二月', '三月', '四月', '五月', '六月'],
+			datasets: [{
+				label: 'zhexian',
+				data: [10, 15, 30, 44, 56, 60],
+				fill: false,
+				borderColor: 'rgb(75, 192, 192)',
+				tension: 0.1
+			}]
+		};
+
+		// 箱线图数据
+		var boxData = {
+			labels: ['数据1', '数据2', '数据3'],
+			datasets: [{
+				label: 'xiangzi',
+				backgroundColor: 'rgba(255, 99, 132, 0.2)',
+				borderColor: 'rgb(255, 99, 132)',
+				borderWidth: 1,
+				data: [
+					[10, 20, 30, 40, 50, 60, 70, 80, 90]
+				]
+			}]
+		};
+
+		// 创建散点图
+		var scatterChart = new Chart('scatterChart', {
+			type: 'scatter',
+			data: scatterData,
+			options: {}
+		});
+
+		// 创建折线图
+		var lineChart = new Chart('lineChart', {
+			type: 'line',
+			data: lineData,
+			options: {}
+		});
+
+		// 创建箱线图
+		var boxChart = new Chart('boxChart', {
+			type: 'boxplot',
+			data: boxData,
+			options: {}
+		});
+	</script>
+</body>
+</html>

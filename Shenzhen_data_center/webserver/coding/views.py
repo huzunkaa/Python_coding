@@ -1,40 +1,42 @@
 import os
+import csv
 from django.shortcuts import render,HttpResponse,redirect,reverse
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
-from echarts import Echart, Legend, Line, Tooltip ,Bar
+from pyecharts.charts import Line
+from pyecharts import options as opts
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse,HttpResponseRedirect
 
 def homepage(response):
     return render(response,'homepages.html')
 
-def upload_file(request):
-    if request.method == 'POST' and request.FILES['file']:
-        # 处理上传文件
-        file = request.FILES['file']
-        fs = FileSystemStorage('/static/user_file/file_storage/')
-        filename = fs.save(file.name, file)
-        file_url = fs.url(filename)
 
-        # 读取文件内容并处理成ECharts所需的数据格式
+def line_chart(request):
+    if request.method == 'POST' and request.FILES['txt_file']:
+        txt_file = request.FILES['txt_file']
         data = []
-        with open(os.path.join(settings.MEDIA_ROOT, filename), "r") as f:
-            for line in f:
-                row = line.strip().split("\t")
-                data.append([row[0], float(row[1])])
-        x_data = [d[0] for d in data]
-        y_data = [d[1] for d in data]
+        for line in txt_file:
+            data.append(line.decode().strip().split())
 
-        # 构建折线图并渲染到模板上
-        chart = Echart('折线图1', '示例')
-        chart.use(Tooltip())
-        chart.use(Legend(['示例']))
-        chart.use(Bar('示例', y_data, x_axis=x_data))#这个相当于规定了是line型号的图
-        chart_data = chart.json
-        return render(request, 'chart.html', {'file_url': file_url, 'chart_data': chart_data})
+        # 提取数据并生成折线图
+        x_data = []  # x轴数据
+        y_data = []  # y轴数据
+        for row in data:
+            x_data.append(row[0])
+            y_data.append(row[1])
+
+        # 使用pyecharts生成折线图
+        line = Line()
+        line.add_xaxis(x_data)
+        line.add_yaxis("折线图", y_data)
+        line.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
+        line.set_global_opts(title_opts=opts.TitleOpts(title="折线图"))
+
+        # 将折线图呈现在网页上
+        return render(request, 'chart.html', {'line': line.render_embed()})
     else:
-        return render(request, 'upload.html')
+        return render(request, 'chart.html')
 
 def document(response):
     return render(response,'document.html')

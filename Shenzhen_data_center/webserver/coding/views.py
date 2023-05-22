@@ -26,15 +26,15 @@ def line_chart(request):
             x_data.append(row[0])
             y_data.append(row[1])
 
-        # 使用pyecharts生成折线图
-        line = Line()
-        line.add_xaxis(x_data)
-        line.add_yaxis("折线图", y_data)
-        line.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
-        line.set_global_opts(title_opts=opts.TitleOpts(title="折线图"))
+        # 使用pyecharts生成第一个图
+        line1 = Line()
+        line1.add_xaxis(x_data)
+        line1.add_yaxis("折线图", y_data)
+        line1.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
+        line1.set_global_opts(title_opts=opts.TitleOpts(title="折线图"))
 
         # 将折线图呈现在网页上
-        return render(request, 'chart.html', {'line': line.render_embed()})
+        return render(request, 'chart.html', {'line': line1.render_embed()})
     else:
         return render(request, 'chart.html')
 

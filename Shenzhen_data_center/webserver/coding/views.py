@@ -7,6 +7,7 @@ from pyecharts.charts import Line
 from pyecharts import options as opts
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse,HttpResponseRedirect
+import matplotlib.pyplot as plt
 
 def homepage(response):
     return render(response,'homepages.html')
@@ -26,6 +27,15 @@ def line_chart(request):
             x_data.append(row[0])
             y_data.append(row[1])
 
+        #使用matplotlib作图
+        fig,ax = plt.subplots()
+        ax.plot(x_data,y_data)
+        ax.set_xlabel('x')
+        ax.set_ylabel('y')
+        ax.set_title('Canvas Plot')
+        canvas = fig.canvas
+
+
         # 使用pyecharts生成第一个图
         line1 = Line()
         line1.add_xaxis(x_data)
@@ -34,7 +44,7 @@ def line_chart(request):
         line1.set_global_opts(title_opts=opts.TitleOpts(title="折线图"))
 
         # 将折线图呈现在网页上
-        return render(request, 'chart.html', {'line': line1.render_embed()})
+        return render(request, 'chart.html', {'line': canvas})
     else:
         return render(request, 'chart.html')
 

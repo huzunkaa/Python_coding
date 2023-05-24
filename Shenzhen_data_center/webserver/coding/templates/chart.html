@@ -1,18 +1,9 @@
-{% extends 'mother_model.html' %}
-{% block main %}
-<style>
-p.serif{font-family:"Times New Roman",Times,serif;}
-p.sansserif{font-family:Arial,Helvetica,sans-serif;}
-</style>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Line Chart Example</title>
+</head>
 <body>
-    <p class="sansserif"><b>feature selection</b></p>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="txt_file">
-        <button type="submit">上传文件</button>
-    </form>
-    {% if line %}
-        {{ line|safe }}
-    {% endif %}
+    <img src="data:image/png;base64,{{ data }}" alt="chart">
 </body>
-{% endblock %}
+</html>

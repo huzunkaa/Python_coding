@@ -53,3 +53,6 @@ def document(response):
 
 def contect(response):
     return render(response,'contect.html')
+
+def database(response):
+    return render(response,'database.html')

@@ -10884,6 +10884,12 @@ header.bg .site-heading .h1 {
 
 
 
+.containerx1 {
+  display: flex;
+}
 
+.boxx1 {
+  width: 50%;
+}
 
 

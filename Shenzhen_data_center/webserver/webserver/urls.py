@@ -6,5 +6,5 @@ from django.conf import settings
 from django.views import static
 
 urlpatterns = [
-    path('', views.line_chart),
+    path('', views.homepage),
 ]

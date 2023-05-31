@@ -12,6 +12,8 @@ import matplotlib.pyplot as plt
 def homepage(response):
     return render(response,'homepages.html')
 
+def test_analysis(response):
+    return render(response, 'test_analysis.html')
 
 def analysis(response):
     return render(response, 'analysis.html')

@@ -16,20 +16,52 @@
     justify-content: center;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-    color: lightblue;
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    color: lightblue;
+nav li {
+  float: left;
+  position: relative;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-    color: lightblue;
+nav li a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+}
+
+nav li a:hover {
+  background-color: #f4f4f4;
+}
+
+/* 下拉菜单 */
+nav ul ul {
+  display: none; /* 初始状态下隐藏下拉菜单 */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: lightblue; /* 设置下拉菜单的背景色为蓝色 */
+}
+
+nav ul li:hover > ul {
+  display: inherit; /* 鼠标悬停在父级元素上显示下拉菜单 */
+}
+
+nav ul ul li {
+  float: none;
+  width: 100%;
+  text-align: center;
+}
+
+nav ul ul a {
+  padding: 8px 12px;
+  color: #fff;
+}
+
+nav ul ul a:hover {
+  background-color: #555;
 }

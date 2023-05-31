@@ -17,23 +17,39 @@
 
     <body>
       <!-- 导航栏 -->
-  <nav class="navbar" style="background-color:lightblue;">
-      <a href="/" style="font-family:Times new roman"><font size="5"><b>IPAGE tools (PAGEools)</b></font></a>
-      <div class="navbar-right">
-        <a href="/" style="font-family:Times new roman">Introduce</a>
-        <a href="/document" style="font-family:Times new roman">Documention</a>
-        <a href="/database" style="font-family:Times new roman">Database</a>
-          <div class="dropdown">
-              <a href="#" style="font-family:Times new roman">Analysis</a>
-              <div class="dropdown-content">
-                    <a href="/analysis">test</a>
-                    <a href="/analysis">upload</a>
-              </div>
-          </div>
+<!--  <nav class="navbar" style="background-color:lightblue;">-->
+<!--      <a href="/" style="font-family:Times new roman"><font size="5"><b>IPAGE tools (PAGEools)</b></font></a>-->
+<!--      <div class="navbar-right">-->
+<!--        <a href="/" style="font-family:Times new roman">Introduce</a>-->
+<!--        <a href="/document" style="font-family:Times new roman">Documention</a>-->
+<!--        <a href="/database" style="font-family:Times new roman">Database</a>-->
+<!--          <div class="dropdown">-->
+<!--              <a href="#" style="font-family:Times new roman">Analysis</a>-->
+<!--              <div class="dropdown-content">-->
+<!--                    <a href="/analysis">test</a>-->
+<!--                    <a href="/analysis">upload</a>-->
+<!--              </div>-->
+<!--          </div>-->
 
-        <a href="/contact" style="font-family:Times new roman">Contact</a>
-      </div>
-  </nav>
+<!--        <a href="/contact" style="font-family:Times new roman">Contact</a>-->
+<!--      </div>-->
+<!--  </nav>-->
+    <nav class="navbar" style="background-color:lightblue;">
+        <a href="/" style="font-family:Times new roman"><font size="5"><b>IPAGE tools (PAGEools)</b></font></a>
+        <ul>
+        <li><a href="/" style="font-family:Times new roman;font-size:20px">Introduce</a></li>
+        <li><a href="/document" style="font-family:Times new roman;font-size:20px">Document</a></li>
+        <li><a href="/database" style="font-family:Times new roman;font-size:20px">Database</a></li>
+        <li><a href="#" style="font-family:Times new roman;font-size:20px">Analysis</a>
+        <ul>
+            <li><a href="/test_analysis" style="font-family:Times new roman;font-size:20px">test</a></li>
+            <li><a href="/analysis" style="font-family:Times new roman;font-size:20px">upload</a></li>
+        </ul>
+        </li>
+        <li><a href="/contact" style="font-family:Times new roman;font-size:20px">Contact</a></li>
+        </ul>
+    </nav>
+
         {% block bg_pic %}{% endblock %}
         {% block main %}{% endblock %}
     </body>

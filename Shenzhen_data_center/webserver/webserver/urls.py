@@ -10,6 +10,7 @@ urlpatterns = [
     path('document',views.document),
     path('database',views.database),
     path('analysis',views.analysis),
-    path('contact',views.contact)
+    path('contact',views.contact),
+    path('test_analysis',views.test_analysis),
 
 ]

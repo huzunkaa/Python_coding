@@ -10884,6 +10884,8 @@ header.bg .site-heading .h1 {
 
 
 
+
+
 .containerx1 {
   display: flex;
 }
@@ -10892,4 +10894,10 @@ header.bg .site-heading .h1 {
   margin-left: 100px;
 }
 
+.center_bigdata {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
 

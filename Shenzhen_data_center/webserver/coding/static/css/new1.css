@@ -1,0 +1,35 @@
+.containerx1 {
+  display: flex;
+}
+
+.boxx1 {
+  margin-left: 200px;
+}
+
+.boxx2 {
+  margin-left: 100px;
+}
+
+.center_bigdata {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    color: lightblue;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    color: lightblue;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    color: lightblue;
+}

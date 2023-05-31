@@ -7,37 +7,58 @@
 {% block main %}
 
 <!-- Main Content-->
-<div class="container px-4 px-lg-5">
-    <div class="row gx-4 gx-lg-5 justify-content-center">
-        <div class="col-md-10 col-lg-8 col-xl-10">
-            <br><br><br>
-            <h4>Individualized Pair Analysis of Gene Expression(IPAGE):</h4>
+<br>
+<div class="line" style="width:80%;height:3px;background-color:#333;margin:auto"></div>
+<div class="center_bigdata">
+    <p style="font-size:30px;font-family:Times new roman"><b>What is Individualized Pair Analysis of Gene Expression(IPAGE):</b></p>
+</div>
+
+<div class="containerx1">
+  <div class="boxx1">
+    <img src="/static/img/IPAGE.jpeg" alt="Your Image" width="700" height="500" >
+  </div>
+    <div class="boxx2" style="width:600px;height:490px;border: 3px dashed black; padding: 10px;">
+        <p style="font-family:Times new roman"> (1) The gene expression data including two groups of samples. </p>
+        <p style="font-family:Times new roman">(2) Transfer gene expression matrix to gene pair matrix. Relative
+            expression between every gene pairs were calculated in each sample. </p>
+        <p style="font-family:Times new roman"> (3) Statistical analysis across all samples. Gene pairs with
+            Fisher’s exact test P-value<10−16 were kept for subsequent analysis.</p>
+        <p style="font-family:Times new roman">(4) Schematic of the expression of the identified gene pairs across the
+            two groups of samples.</p>
+        <p style="font-family:Times new roman">(B) Selecting reverse gene pairs using biological pathways.</p>
+  </div>
+</div>
+<br>
+<div class="line" style="width:80%;height:3px;background-color:#333;margin:auto"></div>
+
+<div class="center_bigdata">
+    <p style="font-size:30px;font-family:Times new roman"><b>development log</b></p>
+</div>
+<div class="center_bigdata">
+    <p style="font-size:15px;font-family:Times new roman"><b>first demo:2023.05.31</b></p>
+</div>
+<br>
+<div class="line" style="width:80%;height:3px;background-color:#333;margin:auto"></div>
+
+<div class="containerx1">
+    <div class="boxx1">
+        <div style="width:400px;margin-left:200px">
+            <p style="font-size:30px;font-family:Times new roman"><b>Contact us</b></p>
+        </div>
+        <div style="width:400px;height:500px;margin-left:200px">
+            <p style="font-size:20px;font-family:Times new roman"><b>Principal Investigator : Lixin Cheng, Ph.D</b></p>
+            <p style="font-size:20px;font-family:Times new roman"><b>Shenzhen People’s Hospital, First Affiliated Hospital
+                of Southern University of Science and Technology, Second Clinical Medicine College of Jinan University, Shenzhen</b></p>
+            <p>Email : easonlcheng@gmail.com</p>
         </div>
     </div>
-</div>
-
-<div class="containerx1">
-  <div class="boxx1">
-    <img src="/static/img/IPAGE.jpeg" alt="Your Image" width="800" height="600" >
-  </div>
-    <div class="boxx1">
-    <p></p>
-  </div>
-</div>
-
-<div class="containerx1">
-  <div class="boxx1">
-    <img src="/static/img/pic1.jpeg" alt="Your Image" width="700" height="600" >
-  </div>
-</div>
-
-
-<div class="containerx1">
-  <div class="boxx1">
-    <img src="/static/img/pic2.jpeg" alt="Your Image" width="800" height="1000" >
-  </div>
-<!--  <div class="boxx1">-->
-<!--    <img src="/static/img/pic1.jpeg" alt="Your Image" width="700" height="600" >-->
-<!--  </div>-->
+    <div class="boxx2">
+        <div style="width:400px;margin-left:200px">
+            <p style="font-size:30px;font-family:Times new roman"><b>Publication</b></p>
+        </div>
+        <div style="width:400px;height:500px;margin-left:200px">
+            <p style="font-size:20px;font-family:Times new roman"><b>In development</b></p>
+        </div>
+    </div>
 </div>
 {% endblock %}

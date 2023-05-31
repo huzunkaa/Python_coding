@@ -7,14 +7,31 @@
 
 {% block main %}
 <div class="center_bigdata">
-    <p style="font-size:40px"><b>The PAGE user document</b></p>
+    <p style="font-size:40px;font-family:Times new roman"><b>IPAGE Data Analysis Cloud platform</b></p>
 </div>
 
-<div style="width:800px;height:300px;margin: auto;">
-    <p style="font-size:25px">1. if you want to analysis your own data, please select UPLOAD DATA FOR YOURSELF.</p>
-    <p style="font-size:25px">2. You can also choose to use our sample data for preliminary analysis. After you become
-        familiar with the operating process, you can submit your own data for analysis.</p>
+<div style="width:800px;margin: auto;line-height:8px;">
+    <p style="font-size:30px;font-family:Times new roman">1.select feature </p>
+    <p style="color:red;font-family:Times new roman">if you want to upload your own files.Please note that we have
+        restricted the file upload size.</p>
+</div>
+<div style="width:1000px;height:490px;border: 3px dashed black; padding: 10px;margin: auto;">
+    <button>select data or upload</button>
 </div>
 
 
+<div style="width:800px;margin: auto;">
+    <p style="font-size:30px;font-family:Times new roman">2.Run model</p>
+</div>
+<div style="width:1000px;height:490px;border: 3px dashed black; padding: 10px;margin: auto;">
+    <select>
+      <option value="option1">choose model</option>
+      <option value="option2">SVM</option>
+      <option value="option3">RF</option>
+        <option value="option4">LASSO</option>
+        <option value="option5">XGBoost</option>
+    </select>
+    <button>run model</button>
+</div>
+<br><br><br><br>
 {% endblock %}
